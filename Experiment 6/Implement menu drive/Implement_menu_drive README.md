@@ -6,8 +6,9 @@
 
 // Structure of a doubly linked list node
 
-struct Node {
+struct Node 
 
+{
 	int data;
     struct Node* next;
     struct Node* prev;
@@ -19,15 +20,20 @@ struct Node* head = NULL;
 
 
 // Function to display the list
-void display() {
 
-if (head == NULL) {
+void display() 
+{
+
+if (head == NULL) 
+{
 	printf("List is empty\n");
 	return;
 	}
 
 	struct Node* temp = head;
-	while (temp != NULL) {
+	
+	while (temp != NULL) 
+	{
 		printf("%d ", temp->data);
 		temp = temp->next;
 	}
@@ -36,7 +42,8 @@ if (head == NULL) {
 
 // Function to insert a number at the end
 
-void insert(int num) {
+void insert(int num) 
+{
  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
 	newNode->data = num;
 	newNode->next = NULL;
@@ -62,8 +69,10 @@ void insert(int num) {
 
 // Function to delete a specific number
 
-void deleteNumber(int num) {
-	if (head == NULL) {
+void deleteNumber(int num)
+{
+	if (head == NULL) 
+	{
 		printf("List is empty\n");
 		return;
 	}
@@ -78,12 +87,14 @@ void deleteNumber(int num) {
         return;
     }
 
-    if (temp == head) {
+    if (temp == head) 
+	{
         head = temp->next;
         if (head != NULL)
             head->prev = NULL;
 
-	} else {
+	}
+	else {
         temp->prev->next = temp->next;
         if (temp->next != NULL)
             temp->next->prev = temp->prev;
@@ -98,8 +109,10 @@ void deleteNumber(int num) {
 
 // Function to reverse the list
 
-void reverseList() {
-	if (head == NULL) {
+void reverseList()
+{
+	if (head == NULL) 
+	{
         printf("List is empty\n");
         return;
     }
@@ -109,7 +122,8 @@ void reverseList() {
     struct Node *current = head;
 
 
-    while (current != NULL) {
+    while (current != NULL) 
+	{
         temp = current->prev;
         current->prev = current->next;
         current->next = temp;
@@ -125,11 +139,13 @@ void reverseList() {
 
 // Function to concatenate another list
 
-void concatenate() {	
+void concatenate()
+{	
 	int n;
     scanf("%d", &n);
 
-    if (n == 0) {
+    if (n == 0) 
+	{
         printf("Second list is empty\n");
         return;
     }
@@ -140,7 +156,8 @@ void concatenate() {
         while (tail->next != NULL)
             tail = tail->next;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+	{
         int val;
         scanf("%d", &val);
 
@@ -149,10 +166,12 @@ void concatenate() {
         newNode->next = NULL;
         newNode->prev = NULL;
 
-        if (head == NULL) {
+        if (head == NULL) 
+		{
             head = newNode;
             tail = newNode;
-        } else {
+        } 
+		else {
             tail->next = newNode;
             newNode->prev = tail;
             tail = newNode;
@@ -168,11 +187,13 @@ int main()
 {
     int choice, num;
 
-    while (1) {
+    while (1)
+	{
         printf("Enter operation\n1: Insert\n2: Delete\n3: Display\n4: Reverse\n5: Concatenate\n6: Exit\n");
         scanf("%d", &choice);
 
-        switch (choice) {
+        switch (choice) 
+		{
             case 1:
                 scanf("%d", &num);
                 insert(num);

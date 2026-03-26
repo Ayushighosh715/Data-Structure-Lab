@@ -124,8 +124,8 @@ void reverseList() {
 }
 
 // Function to concatenate another list
-void concatenate() {
-	
+
+void concatenate() {	
 	int n;
     scanf("%d", &n);
 
@@ -163,7 +163,9 @@ void concatenate() {
 
 }
 
-int main() {
+int main()
+
+{
     int choice, num;
 
     while (1) {

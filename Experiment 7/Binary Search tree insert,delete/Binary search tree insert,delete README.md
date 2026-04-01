@@ -1,4 +1,4 @@
-*/ #include <stdio.h>
+#include <stdio.h>
             Node* temp = root->right;
             free(root);
             return temp;
